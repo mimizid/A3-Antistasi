@@ -45,5 +45,5 @@ switch (_typeX) do
 if (isMultiPlayer) then
 	{
 	sleep 5;
-	["Unit Traits", format ["You have selected %1",_textX]] call A3A_fnc_customHint;
+	[localize "STR_antistasi_customHint_unitTraits", format [localize "STR_antistasi_customHint_unitTraits_select",_textX]] call A3A_fnc_customHint;
 	};

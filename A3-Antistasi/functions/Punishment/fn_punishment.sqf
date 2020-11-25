@@ -52,7 +52,7 @@ private _instigatorHuman = _instigator getVariable ["owner",_instigator]; // Ref
 if (_instigator != _instigatorHuman) then {
     (units group _instigatorHuman) joinSilent group _instigatorHuman;
     group _instigator selectLeader _instigatorHuman;
-    ["Control Unit", "Returned to original Unit due to FF"] remoteExec ["A3A_fnc_customHint",_instigator,false];
+    [localize "STR_antistasi_customHint_control", localize "STR_antistasi_customHint_control_return"] remoteExec ["A3A_fnc_customHint",_instigator,false];
     [_instigatorHuman] remoteExec ["selectPlayer",_instigator,false];
 };
 
@@ -100,13 +100,13 @@ private _logProsecution = {
 };
 
 if (_offenceTotal < 1) exitWith {
-    private _message = format ["Watch your fire!%1%2","<br/>",_customMessage];
+    private _message = format [localize "STR_antistasi_customHint_friendlyFire","<br/>",_customMessage];
 	private _comradeStats = ["<br/>",format ["<br/>Injured comrade: %1<br/>",name _victim]] select (_victim isKindOf "Man");
-	["FF Warning", _message + _comradeStats] remoteExec ["A3A_fnc_customHint", _instigator, false]; // This may or may not work for remoteControlled units depending on deSync.
+	[localize "STR_antistasi_customHint_warning", _message + _comradeStats] remoteExec ["A3A_fnc_customHint", _instigator, false]; // This may or may not work for remoteControlled units depending on deSync.
 	["WARNING"] call _logProsecution;
 };
 
-if (isPlayer _victim) then {["FF Notification", format["%1 hurt you!",name _instigator]] remoteExec ["A3A_fnc_customHint", _victim, false];};
+if (isPlayer _victim) then {[localize "STR_antistasi_customHint_FF", format[localize "STR_antistasi_customHint_punish_hurt",name _instigator]] remoteExec ["A3A_fnc_customHint", _victim, false];};
 
 ["GUILTY"] call _logProsecution;
 [_UID,_timeTotal] spawn { // SteamingHotFixPatch Ghetto has just reached a new level to combat remoteControlling AI

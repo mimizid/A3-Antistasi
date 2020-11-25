@@ -140,7 +140,7 @@ class HQ_menu 			{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "if (isMultiPlayer) then {if (player == theBoss) then {nul=call A3A_fnc_theBossSteal} else {[""Money Grab"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;}} else {[""Money Grab"", ""This function is MP only""] call A3A_fnc_customHint;};";
+			action = "if (isMultiPlayer) then {if (player == theBoss) then {nul=call A3A_fnc_theBossSteal} else {[localize ""STR_antistasi_customHint_money_grab"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;}} else {[localize ""STR_antistasi_customHint_money_grab"", localize ""STR_antistasi_customHint_only_mp""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_savegame: RscButton
 		{
@@ -151,7 +151,7 @@ class HQ_menu 			{
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0;if (player == theBoss) then {nul=CreateDialog ""build_menu""} else {[""Garrisons"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (player == theBoss) then {nul=CreateDialog ""build_menu""} else {[localize ""STR_antistasi_customHint_garrisons"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_moveHQ: RscButton
 		{
@@ -162,7 +162,7 @@ class HQ_menu 			{
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0;if (player == theBoss) then {nul = [] spawn A3A_fnc_moveHQ;} else {[""Move HQ"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (player == theBoss) then {nul = [] spawn A3A_fnc_moveHQ;} else {[localize ""STR_antistasi_customHint_move_hq"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_recruitUnit: RscButton
 		{
@@ -173,7 +173,7 @@ class HQ_menu 			{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "if (player == theBoss) then {if (isMultiplayer) then {nul = [] call A3A_fnc_membersList} else {[""Members List"", ""This function is MP only""] call A3A_fnc_customHint;}} else {[""Members List"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {if (isMultiplayer) then {nul = [] call A3A_fnc_membersList} else {[localize ""STR_antistasi_customHint_members_list"", localize ""STR_antistasi_customHint_only_mp""] call A3A_fnc_customHint;}} else {[localize ""STR_antistasi_customHint_members_list"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_recruitSquad: RscButton
 		{
@@ -184,7 +184,7 @@ class HQ_menu 			{
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0;if (player == theBoss) then {nul=[] spawn A3A_fnc_rebuildAssets} else {[""Recruit Squad"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (player == theBoss) then {nul=[] spawn A3A_fnc_rebuildAssets} else {[localize ""STR_antistasi_customHint_recruit_squad"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_vehicle: RscButton
 		{
@@ -195,7 +195,7 @@ class HQ_menu 			{
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0;if (player == theBoss) then {nul = [] call A3A_fnc_FIAskillAdd} else {[""Recruit Vehicle"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (player == theBoss) then {nul = [] call A3A_fnc_FIAskillAdd} else {[localize ""STR_antistasi_customHint_recruit_vehicle"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_skill: RscButton
 		{
@@ -890,7 +890,7 @@ class game_options 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Set the max number of spawned civilians. Affects game performance";
-			action = "if (player == theBoss) then {closeDialog 0; nul = createDialog ""civ_config""} else {[""Civilian Spawn"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {closeDialog 0; nul = createDialog ""civ_config""} else {[localize ""STR_antistasi_customHint_civilian_spawn"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_R1: RscButton
 		{
@@ -901,7 +901,7 @@ class game_options 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Affects performance. Please use this with caution. Set it to lower distances if you feel Antistasi is running bad";
-			action = "if (player == theBoss) then {closeDialog 0; nul = createDialog ""spawn_config""} else {[""Spawn Distance"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {closeDialog 0; nul = createDialog ""spawn_config""} else {[localize ""STR_antistasi_customHint_spawn_distance"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_L2: RscButton
 		{
@@ -912,7 +912,7 @@ class game_options 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Sets how much local and simulated AI can spawn in the map. Affects performance and AI ""intelligence"". Use with caution. This is not an exact number as vehicles and squad leaders will allways spawn";
-			action = "if (player == theBoss) then {closeDialog 0; nul = createDialog ""fps_limiter""} else {[""AI Limiter"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {closeDialog 0; nul = createDialog ""fps_limiter""} else {[localize ""STR_antistasi_customHint_AI_limiter"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_R2: RscButton
 		{
@@ -923,7 +923,7 @@ class game_options 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Disables/Enable situational music";
-			action = "closedialog 0; if (musicON) then {musicON = false; [""Music"", ""Music turned OFF""] call A3A_fnc_customHint;} else {musicON = true; [""Music"", ""Music turned ON""] call A3A_fnc_customHint;}; nul = execVM ""musica.sqf"";";
+			action = "closedialog 0; if (musicON) then {musicON = false; [localize ""STR_antistasi_customHint_music"", localize ""STR_antistasi_customHint_music_off""] call A3A_fnc_customHint;} else {musicON = true; [localize ""STR_antistasi_customHint_music"", localize ""STR_antistasi_customHint_music_on""] call A3A_fnc_customHint;}; nul = execVM ""musica.sqf"";";
 		};
 		/*
 		class 8slots_L3: RscButton
@@ -1027,7 +1027,7 @@ class fps_limiter 			{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "if (player == theBoss) then {if (maxUnits < 200) then {maxUnits = maxUnits + 10; publicVariable ""maxUnits""; [""AI Limit"", format [""AI Limit has been set at %1"",maxUnits]] call A3A_fnc_customHint;} else {[""AI Limit"", ""AI Limit cannot be raised from 200""] call A3A_fnc_customHint;}} else {[""AI Limit"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {if (maxUnits < 200) then {maxUnits = maxUnits + 10; publicVariable ""maxUnits""; [localize ""STR_antistasi_customHint_AI_limiter"", format [localize ""STR_antistasi_customHint_AI_limiter_text"",maxUnits]] call A3A_fnc_customHint;} else {[localize ""STR_antistasi_customHint_AI_limiter"", localize ""STR_antistasi_customHint_AI_limiter_200""] call A3A_fnc_customHint;}} else {[localize ""STR_antistasi_customHint_AI_limiter"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_Gstatic: RscButton
 		{
@@ -1037,7 +1037,7 @@ class fps_limiter 			{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "if (player == theBoss) then {if (maxUnits > 80) then {maxUnits = maxUnits - 10; publicVariable ""maxUnits""; [""AI Limit"", format [""AI Limit has been set at %1"",maxUnits]] call A3A_fnc_customHint;} else {[""AI Limit"", ""AI Limit cannot be less than 80""] call A3A_fnc_customHint;}} else {[""AI Limit"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {if (maxUnits > 80) then {maxUnits = maxUnits - 10; publicVariable ""maxUnits""; [localize ""STR_antistasi_customHint_AI_limiter"", format [localize ""STR_antistasi_customHint_AI_limiter_text"",maxUnits]] call A3A_fnc_customHint;} else {[localize ""STR_antistasi_customHint_AI_limiter"", localize ""STR_antistasi_customHint_AI_limiter_80""] call A3A_fnc_customHint;}} else {[localize ""STR_antistasi_customHint_AI_limiter"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 	};
 };
@@ -1082,7 +1082,7 @@ class spawn_config 			{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "if (player == theBoss) then {if (distanceSPWN < 2000) then {distanceSPWN = distanceSPWN + 100; distanceSPWN1 = distanceSPWN * 1.3; distanceSPWN2 = distanceSPWN /2; publicVariable ""distanceSPWN"";publicVariable ""distanceSPWN1"";publicVariable ""distanceSPWN2""}; [""Spawn Distance"", format [""Spawn Distance Set to %1 meters. Be careful, this may affect game performance"",distanceSPWN]] call A3A_fnc_customHint;} else {[""Spawn Distance"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {if (distanceSPWN < 2000) then {distanceSPWN = distanceSPWN + 100; distanceSPWN1 = distanceSPWN * 1.3; distanceSPWN2 = distanceSPWN /2; publicVariable ""distanceSPWN"";publicVariable ""distanceSPWN1"";publicVariable ""distanceSPWN2""}; [localize ""STR_antistasi_customHint_spawn_distance"", format [localize ""STR_antistasi_customHint_spawn_distance_text"",distanceSPWN]] call A3A_fnc_customHint;} else {[localize ""STR_antistasi_customHint_spawn_distance"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_Gstatic: RscButton
 		{
@@ -1092,7 +1092,7 @@ class spawn_config 			{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "if (player == theBoss) then {if (distanceSPWN > 600) then {distanceSPWN = distanceSPWN - 100; distanceSPWN1 = distanceSPWN * 1.3; distanceSPWN2 = distanceSPWN /2; publicVariable ""distanceSPWN"";publicVariable ""distanceSPWN1"";publicVariable ""distanceSPWN2"";}; [""Spawn Distance"", format [""Spawn Distance Set to %1 meters"",distanceSPWN]] call A3A_fnc_customHint;} else {[""Spawn Distance"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {if (distanceSPWN > 600) then {distanceSPWN = distanceSPWN - 100; distanceSPWN1 = distanceSPWN * 1.3; distanceSPWN2 = distanceSPWN /2; publicVariable ""distanceSPWN"";publicVariable ""distanceSPWN1"";publicVariable ""distanceSPWN2"";}; [localize ""STR_antistasi_customHint_spawn_distance"", format [localize ""STR_antistasi_customHint_spawn_distance_text_min"",distanceSPWN]] call A3A_fnc_customHint;} else {[localize ""STR_antistasi_customHint_spawn_distance"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 	};
 };
@@ -1137,7 +1137,7 @@ class civ_config 			{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "if (player == theBoss) then {if (civPerc < 150) then {civPerc = civPerc + 1; if (civPerc > 150) then {civPerc = 150}; publicVariable ""civPerc"";}; [""Civilian Limit"", format [""Maximum Number of Civilians Set to %1"",civPerc]] call A3A_fnc_customHint;} else {[""Civilian Limit"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {if (civPerc < 150) then {civPerc = civPerc + 1; if (civPerc > 150) then {civPerc = 150}; publicVariable ""civPerc"";}; [localize ""STR_antistasi_customHint_civ_limit"", format [localize ""STR_antistasi_customHint_civ_limit_set"",civPerc]] call A3A_fnc_customHint;} else {[localize ""STR_antistasi_customHint_civ_limit"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_Gstatic: RscButton
 		{
@@ -1147,7 +1147,7 @@ class civ_config 			{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "if (player == theBoss) then {if (civPerc > 0) then {civPerc = civPerc - 1; if (civPerc < 0) then {civPerc = 0};publicVariable ""civPerc"";}; [""Civilian Limit"", format [""Maximum Number of Civilians Set to %1"",civPerc]] call A3A_fnc_customHint;} else {[""Civilian Limit"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {if (civPerc > 0) then {civPerc = civPerc - 1; if (civPerc < 0) then {civPerc = 0};publicVariable ""civPerc"";}; [localize ""STR_antistasi_customHint_civ_limit"", format [localize ""STR_antistasi_customHint_civ_limit_set"",civPerc]] call A3A_fnc_customHint;} else {[localize ""STR_antistasi_customHint_civ_limit"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 	};
 };
@@ -1194,7 +1194,7 @@ class mission_menu 		{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""AS"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[""Mission Request"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""AS"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize ""STR_antistasi_customHint_mission_request"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_CONV: RscButton
 		{
@@ -1204,7 +1204,7 @@ class mission_menu 		{
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""CONVOY"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[""Mission Request"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""CONVOY"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize ""STR_antistasi_customHint_mission_request"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_DES: RscButton
 		{
@@ -1214,7 +1214,7 @@ class mission_menu 		{
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""DES"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[""Mission Request"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""DES"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize ""STR_antistasi_customHint_mission_request"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_vehicle: RscButton
 		{
@@ -1224,7 +1224,7 @@ class mission_menu 		{
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""CON"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[""Mission Request"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""CON"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize ""STR_antistasi_customHint_mission_request"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_LOG: RscButton
 		{
@@ -1235,7 +1235,7 @@ class mission_menu 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Missions to acquire money or equipment";
-			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""LOG"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[""Mission Request"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""LOG"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize ""STR_antistasi_customHint_mission_request"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_SUPP: RscButton
 		{
@@ -1246,7 +1246,7 @@ class mission_menu 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Missions to increase your support within the population";
-			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""SUPP"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[""Mission Request"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""SUPP"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize ""STR_antistasi_customHint_mission_request"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_RES: RscButton
 		{
@@ -1256,7 +1256,7 @@ class mission_menu 		{
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""RES"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[""Mission Request"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (([player] call A3A_fnc_isMember) or (not(isPlayer theBoss))) then {[""RES"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize ""STR_antistasi_customHint_mission_request"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_exit: RscButton
 		{
@@ -1327,7 +1327,7 @@ class radio_comm 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Look at some player and interact with him";
-			action = "closeDialog 0;if (isMultiPlayer) then {nul = createDialog ""player_money""} else {[""Money"", ""MP Only Menu""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (isMultiPlayer) then {nul = createDialog ""player_money""} else {[localize ""STR_antistasi_customHint_money"", localize ""STR_antistasi_customHint_only_mp""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_L2: RscButton
 		{
@@ -1382,7 +1382,7 @@ class radio_comm 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Several AI options";
-			action = "if (player == leader group player) then {closeDialog 0;nul = createDialog ""AI_management""} else {[""AI Management"", ""Only group leaders may access to this option""] call A3A_fnc_customHint;};";
+			action = "if (player == leader group player) then {closeDialog 0;nul = createDialog ""AI_management""} else {[localize""STR_antistasi_customHint_AI_management"", localize ""STR_antistasi_customHint_only_leader""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_R4: RscButton
 		{
@@ -1450,7 +1450,7 @@ class vehicle_manager 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Options related to vehicle management in HC controlled squads";
-			action = "closeDialog 0; if (player == theBoss) then {nul = createDialog ""squad_manager""} else {[""Vehicle Management"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0; if (player == theBoss) then {nul = createDialog ""squad_manager""} else {[localize ""STR_antistasi_customHint_vehicle_management"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 
 		class HQ_button_Gremove: RscButton
@@ -1508,7 +1508,7 @@ class veh_query 				{
 			y = 0.251941 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;//0.175015
 			h = 0.05 * safezoneH;
-			action = "closeDialog 0;vehQuery = nil; if (player == theBoss) then { [] spawn A3A_fnc_squadRecruit; } else {[""Recruit Squad"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;vehQuery = nil; if (player == theBoss) then { [] spawn A3A_fnc_squadRecruit; } else {[localize ""STR_antistasi_customHint_recruit_squad"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_Gsquad: RscButton
 		{
@@ -1654,7 +1654,7 @@ class AI_management 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Take personal control of the selected squad member or HC squad leader and be able to perform any kind of actions for 60 seconds. Control state will be cancelled if the player or the controlled unit receives any kind of damage";
-		action = "closeDialog 0; if ((count groupselectedUnits player > 0) and (count hcSelected player > 0)) exitWith {[""AI Control"", ""You must select from HC or Squad Bars, not both""] call A3A_fnc_customHint;}; if (count groupselectedUnits player == 1) then {nul = [groupselectedUnits player] execVM ""REINF\controlunit.sqf""}; if (count hcSelected player == 1) then {nul = [hcSelected player] execVM ""REINF\controlHCsquad.sqf"";};";
+		action = "closeDialog 0; if ((count groupselectedUnits player > 0) and (count hcSelected player > 0)) exitWith {[""STR_antistasi_customHint_AI_control"", localize ""STR_antistasi_customHint_AI_control_text""] call A3A_fnc_customHint;}; if (count groupselectedUnits player == 1) then {nul = [groupselectedUnits player] execVM ""REINF\controlunit.sqf""}; if (count hcSelected player == 1) then {nul = [hcSelected player] execVM ""REINF\controlHCsquad.sqf"";};";
 		};
 		class 8slots_R1: RscButton
 		{
@@ -1676,7 +1676,7 @@ class AI_management 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "AI squad mates will heal proactively each other";
-			action = "if (autoHeal) then {autoHeal = false; [""AI Auto Heal"", ""Auto Healing disabled""] call A3A_fnc_customHint;} else {autoHeal = true; [""AI Auto Heal"", ""Auto Heal enabled""] call A3A_fnc_customHint; nul = [] spawn A3A_fnc_autoHealFnc}";
+			action = "if (autoHeal) then {autoHeal = false; [localize ""STR_antistasi_customHint_Autoheal"", localize ""STR_antistasi_customHint_Autoheal_off""] call A3A_fnc_customHint;} else {autoHeal = true; [localize ""STR_antistasi_customHint_Autoheal"", localize ""STR_antistasi_customHint_Autoheal_on""] call A3A_fnc_customHint; nul = [] spawn A3A_fnc_autoHealFnc}";
 		};
 		class 8slots_R2: RscButton
 		{
@@ -1698,7 +1698,7 @@ class AI_management 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Adds selected units or squads to a map selected garrison";
-			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\addToGarrison.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\addToGarrison.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {[""Garrison"", ""No units or squads selected""] call A3A_fnc_customHint;}";
+			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\addToGarrison.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\addToGarrison.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {[localize ""STR_antistasi_customHint_garrisons"", localize ""STR_antistasi_customHint_garrisons_text""] call A3A_fnc_customHint;}";
 		};
 		class 8slots_R3: RscButton
 		{
@@ -1720,7 +1720,7 @@ class AI_management 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Dimiss selected units or squads, recovering it's cost to the proper resource pool";
-			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {[""Dismiss Squad"", ""No units or squads selected""] call A3A_fnc_customHint;}";
+			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {[localize ""STR_antistasi_customHint_dismiss"", localize ""STR_antistasi_customHint_dismiss_text""] call A3A_fnc_customHint;}";
 		};
 		class 8slots_R4: RscButton
 		{
@@ -1778,7 +1778,7 @@ class commander_comm 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Recruit new squads and manage them with the HC Module (CTRL + SPACE)";
-			action = "closeDialog 0;if (player == theBoss) then { [] spawn A3A_fnc_squadRecruit; } else {[""Recruit Squad"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (player == theBoss) then { [] spawn A3A_fnc_squadRecruit; } else {[localize ""STR_antistasi_customHint_recruit_squad"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_R1: RscButton
 		{
@@ -1789,7 +1789,7 @@ class commander_comm 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Ask for Air Support (uses Airstrike points)";
-			action = "closeDialog 0;if (player == theBoss) then {_nul = createDialog ""carpet_bombing""} else {[""Air Support"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0;if (player == theBoss) then {_nul = createDialog ""carpet_bombing""} else {[localize ""STR_antistasi_customHint_air_support"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_L2: RscButton
 		{
@@ -1800,7 +1800,7 @@ class commander_comm 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Establish a new watchpost or roadblock depending on the type of terrain you select";
-			action = "if (player == theBoss) then {closeDialog 0;[""create""] spawn A3A_fnc_outpostDialog} else {[""Outposts/Roadblocks"", ""You're not the Commander!""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {closeDialog 0;[""create""] spawn A3A_fnc_outpostDialog} else {[localize ""STR_antistasi_customHint_op_rb"", localize ""STR_antistasi_customHint_only_comander!""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_R2: RscButton
 		{
@@ -1811,7 +1811,7 @@ class commander_comm 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Cleans several things in game. Use with caution as it freezes the mission";
-			action = "if (player == theBoss) then {closedialog 0;[] remoteExec [""A3A_fnc_garbageCleaner"",2]} else {[""Garbage Cleaner"", ""Only Player Commander has access to this function""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {closedialog 0;[] remoteExec [""A3A_fnc_garbageCleaner"",2]} else {[localize ""STR_antistasi_customHint_clean"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_L3: RscButton
 		{
@@ -1822,7 +1822,7 @@ class commander_comm 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Remove selected observation post or roadblock, money will be refunded";
-			action = "if (player == theBoss) then {closeDialog 0; [""delete""] spawn A3A_fnc_outpostDialog} else {[""Outposts/Roadblocks"", ""You're not the Commander!""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {closeDialog 0; [""delete""] spawn A3A_fnc_outpostDialog} else {[localize ""STR_antistasi_customHint_op_rb"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_R3: RscButton
 		{
@@ -1844,7 +1844,7 @@ class commander_comm 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Step down from commander or toggle eligibility";
-			action = "if (isMultiplayer) then {closedialog 0;[player, cursorTarget] remoteExec [""A3A_fnc_theBossToggleEligibility"", 2]} else {[""Resign Commander"", ""This feature is MP Only""] call A3A_fnc_customHint;};";
+			action = "if (isMultiplayer) then {closedialog 0;[player, cursorTarget] remoteExec [""A3A_fnc_theBossToggleEligibility"", 2]} else {[localize ""STR_antistasi_customHint_resign"", localize ""STR_antistasi_customHint_only_mp""] call A3A_fnc_customHint;};";
 		};
 		class 8slots_R4: RscButton
 		{
@@ -1855,7 +1855,7 @@ class commander_comm 		{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Look at a vehicle and sell it for money";
-			action = "if (player == theBoss) then {closeDialog 0; nul = [] call A3A_fnc_sellVehicle} else {[""Sell Vehicle"", ""Only the Commander can sell vehicles""] call A3A_fnc_customHint;};";
+			action = "if (player == theBoss) then {closeDialog 0; nul = [] call A3A_fnc_sellVehicle} else {[localize ""STR_antistasi_customHint_sell_veh"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 	};
 };
@@ -1972,7 +1972,7 @@ class dismiss_menu 				{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Dimiss selected units or squads, recovering it's cost to the proper resource pool";
-			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {[""Garrison Squad"", ""No units or squads selected""] call A3A_fnc_customHint;}";
+			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {[localize ""STR_antistasi_customHint_garrisons"", localize ""STR_antistasi_customHint_garrisons_text""] call A3A_fnc_customHint;}";
 		};
 		class HQ_button_Gstatic: RscButton
 		{
@@ -1983,7 +1983,7 @@ class dismiss_menu 				{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Adds selected units or squads to a map selected garrison";
-			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\addToGarrison.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\addToGarrison.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {[""Garrison Static"", ""No units or squads selected""] call A3A_fnc_customHint;}";
+			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\addToGarrison.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\addToGarrison.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {[localize ""STR_antistasi_customHint_garrisons"", localize ""STR_antistasi_customHint_garrisons_text""] call A3A_fnc_customHint;}";
 		};
 		/*
 		class HQ_button_Gremove: RscButton
@@ -2297,7 +2297,7 @@ class player_money 			{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Use this option to add the player which you are currently looking to the member's list";
-			action = "if (isMultiplayer) then {closeDialog 0;nul = [""add""] call A3A_fnc_memberAdd;} else {[""Membership"", ""This function is MP only""] call A3A_fnc_customHint;};";
+			action = "if (isMultiplayer) then {closeDialog 0;nul = [""add""] call A3A_fnc_memberAdd;} else {[localize ""STR_antistasi_customHint_membership"", localize ""STR_antistasi_customHint_only_mp""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_MG: RscButton
 		{
@@ -2308,7 +2308,7 @@ class player_money 			{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Use this option to remove the player which you are currently looking to the member's list";
-			action = "if (isMultiplayer) then {closeDialog 0;nul = [""remove""] call A3A_fnc_memberAdd;} else {[""Membership"", ""This function is MP only""] call A3A_fnc_customHint;};";
+			action = "if (isMultiplayer) then {closeDialog 0;nul = [""remove""] call A3A_fnc_memberAdd;} else {[localize ""STR_antistasi_customHint_membership"", localize ""STR_antistasi_customHint_only_mp""] call A3A_fnc_customHint;};";
 		};
 		class HQ_button_AT: RscButton
 		{
@@ -2384,7 +2384,7 @@ class garage_sell 			{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0; if (player == theBoss) then {nul = [] call A3A_fnc_sellVehicle} else {[""Sell Vehicle"", ""Only the Commander can sell vehicles""] call A3A_fnc_customHint;};";
+			action = "closeDialog 0; if (player == theBoss) then {nul = [] call A3A_fnc_sellVehicle} else {[localize ""STR_antistasi_customHint_sell_veh"", localize ""STR_antistasi_customHint_only_comander""] call A3A_fnc_customHint;};";
 		};
 		/*
 		class HQ_button_Gremove: RscButton

@@ -81,12 +81,12 @@ _instigator setVariable ["punishment_coolDown", servertime + 1, false]; // Local
 private _victimStats = ["",format [" damaged %1 ", name _victim]] select (_victim isKindOf "Man");
 _victimStats = _victimStats + (["[AI]",format ["[%1]", getPlayerUID _victim]] select (isPlayer _victim));
 private _notifyVictim = {
-    if (isPlayer _victim) then {["FF Notification", format["%1 hurt you!",name _instigator]] remoteExec ["A3A_fnc_customHint", _victim, false];};
+    if (isPlayer _victim) then {[localize "STR_antistasi_customHint_FF", format[localize "STR_antistasi_customHint_punish_hurt",name _instigator]] remoteExec ["A3A_fnc_customHint", _victim, false];};
 };
 private _notifyInstigator = {
     params ["_exempMessage"];
     private _comradeStats = ["<br/>",format ["<br/>Injured comrade: %1<br/>",name _victim]] select (_victim isKindOf "Man");
-    ["FF Notification", _exempMessage+ _comradeStats + _customMessage] remoteExec ["A3A_fnc_customHint", _instigator, false];
+    [localize "STR_antistasi_customHint_FF", _exempMessage+ _comradeStats + _customMessage] remoteExec ["A3A_fnc_customHint", _instigator, false];
 };
 private _gotoExemption = {
     params [ ["_exemptionDetails", "" ,[""]] ];

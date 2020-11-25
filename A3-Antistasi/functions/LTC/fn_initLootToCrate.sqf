@@ -6,7 +6,7 @@ if ((actionIDs Player) findIf {
 
 //add load actions
 player addAction [
-	"Load loot to crate",
+	localize "STR_antistasi_addAction_lootCrate",
 	{
 		[cursorObject, clientOwner] remoteExecCall ["A3A_fnc_canLoot", 2];
 	},
@@ -23,7 +23,7 @@ player addAction [
 ];
 
 player addAction [
-	"Load loot from crate to vehicle",
+	localize "STR_antistasi_addAction_lootVeh",
 	{
 		[cursorObject, clientOwner] remoteExecCall ["A3A_fnc_canTransfer", 2];
 	},
@@ -41,7 +41,7 @@ player addAction [
 
 //add carry actions
 player addAction [
-	"Carry Crate",
+	localize "STR_antistasi_addAction_carryCrate",
 	{
 		[cursorObject, true] call A3A_fnc_carryCrate;
 	},
@@ -59,7 +59,7 @@ player addAction [
 ];
 
 player addAction [
-	"Drop Crate",
+	localize "STR_antistasi_addAction_dropCrate",
 	{
 		[nil, false] call A3A_fnc_carryCrate;
 	},

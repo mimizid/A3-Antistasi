@@ -83,8 +83,8 @@ private _dateLimitNum = dateToNumber _dateLimit;
 //creating mission
 [2, format ["Creating Helicopter Down mission"], _filename] call A3A_fnc_log;
 private _location = [_missionOrigin] call A3A_fnc_localizar;
-private _text = format ["We have downed a helicopter. There is a good chance to destroy it before it is recovered. Do it before a recovery team from %1 reaches the crash site. MOVE QUICKLY",_location];
-[[teamPlayer,civilian],"DES",[_text,"Downed Heli",_taskMrk],_posCrashMrk,false,0,true,"Destroy",true] call BIS_fnc_taskCreate;
+private _text = format [localize "STR_antistasi_mission_destroyHeli_text",_location];
+[[teamPlayer,civilian],"DES",[_text,localize "STR_antistasi_mission_destroyHeli",_taskMrk],_posCrashMrk,false,0,true,"Destroy",true] call BIS_fnc_taskCreate;
 missionsX pushBack ["DES","CREATED"]; publicVariable "missionsX";
 
 ////////////////
@@ -321,7 +321,7 @@ if ((not alive _heli) || (_heli distance (getMarkerPos respawnTeamPlayer) < 100)
 	} else {
 		[3, format ["%1 was destroyed", _heli], _filename] call A3A_fnc_log;
 	};
-	["DES",[_text,"Downed Heli",_taskMrk],_posCrashMrk,"SUCCEEDED","Destroy"] call A3A_fnc_taskUpdate;
+	["DES",[_text,localize "STR_antistasi_mission_destroyHeli",_taskMrk],_posCrashMrk,"SUCCEEDED","Destroy"] call A3A_fnc_taskUpdate;
 	[0,300*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
 	[1800*_bonus, _sideX] remoteExec ["A3A_fnc_timingCA",2];
 	{if (_x distance _heli < 500) then {[10*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
@@ -329,7 +329,7 @@ if ((not alive _heli) || (_heli distance (getMarkerPos respawnTeamPlayer) < 100)
 	if (_typeVehH in (vehNATOAttackHelis + vehCSATAttackHelis)) then {[600*_bonus, _sideX] remoteExec ["A3A_fnc_timingCA",2]};
 } else {
 	[3, format ["%1 was successfully recovered by %2, mission failed", _heli, _sideX], _filename] call A3A_fnc_log;
-	["DES",[_text,"Downed Heli",_taskMrk],_posCrashMrk,"FAILED","Destroy"] call A3A_fnc_taskUpdate;
+	["DES",[_text,localize "STR_antistasi_mission_destroyHeli",_taskMrk],_posCrashMrk,"FAILED","Destroy"] call A3A_fnc_taskUpdate;
 	[-600*_bonus, _sideX] remoteExec ["A3A_fnc_timingCA",2];
 	[-10*_bonus,theBoss] call A3A_fnc_playerScoreAdd;
 	if (_typeVehH in (vehNATOAttackHelis + vehCSATAttackHelis)) then {[-600*_bonus, _sideX] remoteExec ["A3A_fnc_timingCA",2]};

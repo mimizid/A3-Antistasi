@@ -223,7 +223,7 @@ _vehicleCount = (round (_vehicleCount)) max 1;
 if (_isMarker && !_forced) then {
 	// send notification to PvPs for marker counterattacks
 	private _nameDest = [_target] call A3A_fnc_localizar;
-	["IntelAdded", ["", format ["QRF sent to %1",_nameDest]]] remoteExec ["BIS_fnc_showNotification",_sideX];
+	["IntelAdded", ["", format [localize "STR_antistasi_notification_qrf",_nameDest]]] remoteExec ["BIS_fnc_showNotification",_sideX];
 };
 
 [[_target, _source, _sideX, _vehicleCount, _landAttack, _typeOfAttack], "A3A_fnc_createQRF"] call A3A_fnc_scheduler;

@@ -74,7 +74,7 @@ class should_load_personal_save {
 		{
 			idc = -1;
 			text = $STR_antistasi_dialogs_generic_button_yes_text;
-			tooltip = $STR_antistasi_dialogs_generic_button_yes_tooltip;
+			tooltip = $STR_antistasi_dialogs_generic_button_yes_text;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -85,7 +85,7 @@ class should_load_personal_save {
 		{
 			idc = -1;
 			text = $STR_antistasi_dialogs_generic_button_no_text;
-			tooltip = $STR_antistasi_dialogs_generic_button_no_tooltip;
+			tooltip = $STR_antistasi_dialogs_generic_button_no_text;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
